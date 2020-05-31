@@ -131,7 +131,7 @@ static int subgen(const char *prefix, const wctype_t t[12],
 			"(1u << (w - starts[0])%%(8*sizeof(*tables[0]))) : 0;\n");
 	else
 		printf("\t\treturn w < sizes[0] ? "
-			"(tables[0][w] << 4u*!(tables[0][w] & 1)) & (1u << t) : 0;\n");
+			"(unsigned)(tables[0][w] << 4u*!(tables[0][w] & 1)) & (1u << t) : 0;\n");
 	printf("\t{\n");
 	printf("\t\tunsigned i = sizeof(starts)/sizeof(starts[0]);\n");
 	printf("\t\twhile (w < starts[--i]);\n");
@@ -141,7 +141,7 @@ static int subgen(const char *prefix, const wctype_t t[12],
 			"(1u << (w - starts[i])%%(8*sizeof(*tables[0]))) : 0;\n");
 	else
 		printf("\t\treturn w - starts[i] < sizes[i] ? "
-			"(tables[i][w - starts[i]] << 4u*!(tables[i][w - starts[i]] & 1)) & (1u << t) : 0;\n");
+			"(unsigned)(tables[i][w - starts[i]] << 4u*!(tables[i][w - starts[i]] & 1)) & (1u << t) : 0;\n");
 	printf("\t}\n");
 	printf("}\n");
 	return 0;
@@ -9640,11 +9640,11 @@ static unsigned uni_wctype_check(const unsigned w, const int t)
 		uni_wctype_check_01f130,
 	};
 	if (w < starts[1])
-		return w < sizes[0] ? (tables[0][w] << 4u*!(tables[0][w] & 1)) & (1u << t) : 0;
+		return w < sizes[0] ? (unsigned)(tables[0][w] << 4u*!(tables[0][w] & 1)) & (1u << t) : 0;
 	{
 		unsigned i = sizeof(starts)/sizeof(starts[0]);
 		while (w < starts[--i]);
-		return w - starts[i] < sizes[i] ? (tables[i][w - starts[i]] << 4u*!(tables[i][w - starts[i]] & 1)) & (1u << t) : 0;
+		return w - starts[i] < sizes[i] ? (unsigned)(tables[i][w - starts[i]] << 4u*!(tables[i][w - starts[i]] & 1)) & (1u << t) : 0;
 	}
 }
 
