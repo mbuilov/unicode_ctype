@@ -220,7 +220,19 @@ int main(int argc, char *argv[])
 	printf("\t\tdefault:\n");
 	printf("\t\t\treturn 0;\n");
 	printf("\t}\n");
-	printf("}\n");
+	printf("}\n\n");
+	printf("int unicode_isalnum(unsigned w) {return unicode_isctype(w, 1);}\n");
+	printf("int unicode_isalpha(unsigned w) {return unicode_isctype(w, 2);}\n");
+	printf("int unicode_islower(unsigned w) {return unicode_isctype(w, 3);}\n");
+	printf("int unicode_isupper(unsigned w) {return unicode_isctype(w, 4);}\n");
+	printf("int unicode_isxdigit(unsigned w) {return unicode_isctype(w, 5);}\n");
+	printf("int unicode_isgraph(unsigned w) {return unicode_isctype(w, 6);}\n");
+	printf("int unicode_isprint(unsigned w) {return unicode_isctype(w, 7);}\n");
+	printf("int unicode_isdigit(unsigned w) {return unicode_isctype(w, 8);}\n");
+	printf("int unicode_isblank(unsigned w) {return unicode_isctype(w, 9);}\n");
+	printf("int unicode_iscntrl(unsigned w) {return unicode_isctype(w, 10);}\n");
+	printf("int unicode_ispunct(unsigned w) {return unicode_isctype(w, 11);}\n");
+	printf("int unicode_isspace(unsigned w) {return unicode_isctype(w, 12);}\n");
 	printf("\n/* End of generated code */\n");
 	return 0;
 }
@@ -19501,6 +19513,19 @@ int unicode_ctype(const char name[])
 			return 0;
 	}
 }
+
+int unicode_isalnum(unsigned w) {return unicode_isctype(w, 1);}
+int unicode_isalpha(unsigned w) {return unicode_isctype(w, 2);}
+int unicode_islower(unsigned w) {return unicode_isctype(w, 3);}
+int unicode_isupper(unsigned w) {return unicode_isctype(w, 4);}
+int unicode_isxdigit(unsigned w) {return unicode_isctype(w, 5);}
+int unicode_isgraph(unsigned w) {return unicode_isctype(w, 6);}
+int unicode_isprint(unsigned w) {return unicode_isctype(w, 7);}
+int unicode_isdigit(unsigned w) {return unicode_isctype(w, 8);}
+int unicode_isblank(unsigned w) {return unicode_isctype(w, 9);}
+int unicode_iscntrl(unsigned w) {return unicode_isctype(w, 10);}
+int unicode_ispunct(unsigned w) {return unicode_isctype(w, 11);}
+int unicode_isspace(unsigned w) {return unicode_isctype(w, 12);}
 
 /* End of generated code */
 #endif

@@ -25,4 +25,54 @@ A_Check_return
 #endif
 int unicode_isctype(unsigned w, int t);
 
+/* Common checks */
+#ifdef SAL_DEFS_H_INCLUDED /* include "sal_defs.h" for the annotations */
+A_Check_return
+#endif
+int unicode_isalnum(unsigned w);
+#ifdef SAL_DEFS_H_INCLUDED /* include "sal_defs.h" for the annotations */
+A_Check_return
+#endif
+int unicode_isalpha(unsigned w);
+#ifdef SAL_DEFS_H_INCLUDED /* include "sal_defs.h" for the annotations */
+A_Check_return
+#endif
+int unicode_isblank(unsigned w);
+#ifdef SAL_DEFS_H_INCLUDED /* include "sal_defs.h" for the annotations */
+A_Check_return
+#endif
+int unicode_iscntrl(unsigned w);
+#ifdef SAL_DEFS_H_INCLUDED /* include "sal_defs.h" for the annotations */
+A_Check_return
+#endif
+int unicode_isdigit(unsigned w);
+#ifdef SAL_DEFS_H_INCLUDED /* include "sal_defs.h" for the annotations */
+A_Check_return
+#endif
+int unicode_isgraph(unsigned w);
+#ifdef SAL_DEFS_H_INCLUDED /* include "sal_defs.h" for the annotations */
+A_Check_return
+#endif
+int unicode_islower(unsigned w);
+#ifdef SAL_DEFS_H_INCLUDED /* include "sal_defs.h" for the annotations */
+A_Check_return
+#endif
+int unicode_isprint(unsigned w);
+#ifdef SAL_DEFS_H_INCLUDED /* include "sal_defs.h" for the annotations */
+A_Check_return
+#endif
+int unicode_ispunct(unsigned w);
+#ifdef SAL_DEFS_H_INCLUDED /* include "sal_defs.h" for the annotations */
+A_Check_return
+#endif
+int unicode_isspace(unsigned w);
+#ifdef SAL_DEFS_H_INCLUDED /* include "sal_defs.h" for the annotations */
+A_Check_return
+#endif
+int unicode_isupper(unsigned w);
+#ifdef SAL_DEFS_H_INCLUDED /* include "sal_defs.h" for the annotations */
+A_Check_return
+#endif
+int unicode_isxdigit(unsigned w);
+
 #endif /* UNICODE_CTYPE_H_INCLUDED */
