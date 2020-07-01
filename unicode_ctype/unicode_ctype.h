@@ -14,6 +14,7 @@
 #ifdef SAL_DEFS_H_INCLUDED /* include "sal_defs.h" for the annotations */
 A_Nonnull_all_args
 A_At(name, A_In_z)
+A_Ret_range(0,12)
 A_Check_return
 #endif
 int unicode_ctype(const char name[]);
@@ -22,6 +23,7 @@ int unicode_ctype(const char name[]);
    Returns 0 if not or t is 0. */
 #ifdef SAL_DEFS_H_INCLUDED /* include "sal_defs.h" for the annotations */
 A_Check_return
+A_At(t, A_In_range(0,12))
 #endif
 int unicode_isctype(unsigned w, int t);
 
