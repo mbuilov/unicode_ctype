@@ -1,5 +1,7 @@
 Description.
-small library implementing toupper/tolower/ctype/isctype LC_CTYPE locale dependent functions for unicode.
+Small library implementing toupper/tolower/ctype/isctype LC_CTYPE locale dependent functions for unicode.
+
+Unicode tables were generated under the OS with GNU libc 2.32 (with support of Unicode 13.0.0)
 
 Author.
 Copyright (C) 2020 Michael M. Builov, https://github.com/mbuilov/unicode_ctype
